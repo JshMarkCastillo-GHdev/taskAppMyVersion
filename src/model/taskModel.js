@@ -28,12 +28,21 @@ const findOneTask = (id) => {
 };
 
 // UPDATE A TASK
-const updateTask = (id, title) => {
+const updateTask = (id, title, isCompleted) => {
   const foundTask = tasks.find((task) => task.id === id);
 
   if (!foundTask) return null;
 
-  foundTask.title = title;
+  // ONLY UPDATE if the title is not undefined
+  if (title !== undefined) {
+    foundTask.title = title;
+  }
+
+  // ONLY UPDATE isCompleted if it has proper value (true or false)
+  if (isCompleted !== undefined) {
+    foundTask.isCompleted = isCompleted; // Update "isCompleted" if modified
+  }
+
   return foundTask;
 };
 

@@ -25,7 +25,8 @@ const updateById = (req, res) => {
   const body = req.body;
 
   // IF the task exist, modify the title
-  const task = taskModel.updateTask(id, body.title);
+  // NEW GOAL, modify the "isCompleted" too
+  const task = taskModel.updateTask(id, body.title, body.isCompleted);
 
   // TASK ID DOESNT EXIST > RETURN NULL (Task does not exists)
   if (!task) return res.status(404).json({ error: "Task not found" });

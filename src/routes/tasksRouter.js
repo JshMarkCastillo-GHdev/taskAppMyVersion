@@ -1,6 +1,9 @@
 import express from "express";
 import { taskController } from "../controller/tasksController.js";
-import { validateCreateTask } from "../validations/tasksValidation.js";
+import {
+  validateCreateTask,
+  validateUpdateTask,
+} from "../validations/tasksValidation.js";
 import { protect } from "../middleware/tasksProtect.js";
 
 // New Router
@@ -18,7 +21,7 @@ taskRouter
   // GET by ID
   .get("/tasks/:id", taskController.getById)
   // UPDATE
-  .put("/tasks/:id", validateCreateTask, taskController.updateById)
+  .put("/tasks/:id", validateUpdateTask, taskController.updateById)
   // DELETE
   .delete("/tasks/:id", taskController.deleteById);
 
