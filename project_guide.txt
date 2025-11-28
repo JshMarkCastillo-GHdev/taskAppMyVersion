@@ -107,3 +107,13 @@ POSTMAN
 - GET (by ID)
 - PUT 
 - DELETE
+
+=== FORK & PR ===
+// FORK the repo first
+git clone sshOfRepo.git
+cd sshOfRepo
+
+git checkout -b newNameOfRepoBranch
+git add .
+git commit -m "message"
+git push -u origin newNameOfRepoBranch
