@@ -85,6 +85,51 @@ upon using "git branch".
 8. After this, for every commit you will push to the your REPO, just follow
 steps 1,2 and 7.
 
+=== VITE REACT frontend installation ===
+
+1. cd (your frontend folder)
+2. npm init -y 
+3. npm create vite@latest .
+4. Pick React and Javascript
+5. npm install
+6. npm run dev
+
+= Unused =
+I. Delete App.css, assets
+II. Delete contents App.jsx and index.css
+
+= Add =
+I. In main.jsx -> <BrowserRouter> from "react-router"
+
+= Modules =
+I. npm i react-router
+II. npm i react-hot-toast
+
+III. Install Tailwind CSS
+- npm install -D tailwindcss@3 postcss autoprefixer npx tailwindcss init -p
+-- update tailwind.config.js (Copy the config from v3.tailwind via Vite config)
+-- update index.css (Copy the config from v3.tailwind via Vite config)
+
+IV. Install DaisyUI 
+- npm install i daisyui@4.12.24 -D
+-- update tailwind.config.js (import daisyui from "daisyui")
+-- update tailwind.config.js base on your preference ("coffee")
+
+=== DEPLOY PRODUCTION SERVER ===
+1. push the local repo to your github repo
+- cd root folder of the backend & frontend
+- add .gitnore from frontend folder
+- add .env | node_modules | dist to .gitignore
+
+2. npm init -y 
+- package.json
+- update package.json
+"scripts":{
+"build": "npm install --prefix backend && npm install --prefix frontend && npm run build --prefix frontend",
+"start": "npm run start --prefix backend"
+}
+
+
 === HTTP STATUS CODES ===
 
 1XX - informational
